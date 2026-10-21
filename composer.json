@@ -1,17 +1,11 @@
 {
     "name": "haunt/settings",
     "description": "Sitewide settings for a Haunt application.",
-    "version": "dev-main",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "crotanite",
             "email": "crotanite@lumitestudios.com"
-        }
-    ],
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../../packages/framework"
         }
     ],
     "require": {
