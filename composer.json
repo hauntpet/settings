@@ -1,0 +1,44 @@
+{
+    "name": "haunt/settings",
+    "description": "Sitewide settings for a Haunt application.",
+    "version": "dev-main",
+    "authors": [
+        {
+            "name": "crotanite",
+            "email": "crotanite@lumitestudios.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../packages/framework"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "haunt/framework": "dev-main",
+        "spatie/laravel-settings": "^3.10",
+        "filament/spatie-laravel-settings-plugin": "^5.10"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Haunt\\Settings\\": "src/"
+        }
+    },
+    "extra": {
+        "haunt": {
+            "name": "Haunt: Settings",
+            "plugin": "\\Haunt\\Settings\\SettingsPlugin"
+        }
+    },
+    "scripts": {
+        "pint": [
+            "pint"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
