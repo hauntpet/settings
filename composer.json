@@ -1,7 +1,7 @@
 {
     "name": "haunt/settings",
     "description": "Sitewide settings for a Haunt application.",
-    "version": "0.1",
+    "version": "dev-main",
     "authors": [
         {
             "name": "crotanite",
