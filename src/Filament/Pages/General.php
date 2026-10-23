@@ -4,12 +4,17 @@ namespace Haunt\Settings\Filament\Pages;
 
 use Filament\Schemas\Schema;
 use Haunt\Framework\Facades\Hook;
+use Haunt\Settings\SettingsConstants;
 
 class General extends SettingsPage
 {
     public function form(Schema $schema): Schema
     {
-        $settings = Hook::applyFilters('admin.settings.general', [
+        $schema = Hook::applyFilters(SettingsConstants::SETTINGS_GENERAL_FORM, $schema);
+        $fields = Hook::applyFilters(SettingsConstants::SETTINGS_GENERAL_FIELDS, [
+            self::getSettingField('minimum_age')
+                ->label('Minimum Age')
+                ->required(),
             self::getSettingField('state_game')
                 ->label('Game State')
                 ->required(),
@@ -22,6 +27,6 @@ class General extends SettingsPage
         ]);
 
         return $schema
-            ->components($settings);
+            ->components($fields);
     }
 }

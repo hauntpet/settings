@@ -12,21 +12,21 @@ use LumiteStudios\Common\Model\Concerns\HasCacheKey;
 /**
  ***** Properties
  *
- * @property int $id
- * @property string $key
+ * @property int                     $id
+ * @property string                  $key
  * @property array<string, string[]> $rules
- * @property object $created_at
- * @property object $updated_at
+ * @property object                  $created_at
+ * @property object                  $updated_at
  ***** Attributes
  * @property string $name
- * @property mixed $value
+ * @property mixed  $value
  ***** Relationships
  ***** Scopes
  ***** Methods
  *
- * @method void set(mixed $value, bool $validate = true)
+ * @method        void   set(mixed $value, bool $validate = true)
  * @method static static add(string $key, mixed $value, array $rules = [])
- * @method static void validateValue(mixed $value, array $rules)
+ * @method static void   validateValue(mixed $value, array $rules)
  */
 class Setting extends Model
 {

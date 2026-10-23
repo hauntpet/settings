@@ -2,12 +2,12 @@
 
 namespace Haunt\Settings;
 
-use Filament\Panel;
 use Filament\Contracts\Plugin;
+use Filament\Panel;
+use Haunt\Framework\Plugin\Concerns as PluginConcerns;
+use Haunt\Framework\Plugin\HauntPlugin;
 use Haunt\Settings\Filament\Pages;
 use Haunt\Settings\Models\Setting;
-use Haunt\Framework\Plugin\HauntPlugin;
-use Haunt\Framework\Plugin\Concerns as PluginConcerns;
 
 class SettingsPlugin extends HauntPlugin implements Plugin
 {
@@ -49,9 +49,10 @@ class SettingsPlugin extends HauntPlugin implements Plugin
 
     private function installSettings(): self
     {
-        Setting::add('state_game', 'alpha', ['required', 'string']);
-        Setting::add('state_login', 'open', ['required', 'string']);
-        Setting::add('state_register', 'invite', ['required', 'string']);
+        Setting::add('minimum_age', 13, ['required', 'integer', 'min:13']);
+        Setting::add('state_game', 'alpha', ['required', 'in:alpha,beta,live']);
+        Setting::add('state_login', 'open', ['required', 'in:open,closed,staff']);
+        Setting::add('state_register', 'invite', ['required', 'in:open,closed,invite']);
 
         return $this;
     }
