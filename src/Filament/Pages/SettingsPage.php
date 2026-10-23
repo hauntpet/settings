@@ -125,7 +125,7 @@ class SettingsPage extends Page
 
     public function canEdit(): bool
     {
-        return true;
+        return auth()->user()->is_administrator;
     }
 
     public static function getSettingField(string $key)
