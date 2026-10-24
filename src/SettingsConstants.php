@@ -1,11 +1,12 @@
 <?php
+
 namespace Haunt\Settings;
 
 class SettingsConstants
 {
-    const SETTINGS_MOUNT = 'settings.mount';
-    const SETTINGS_DATA = 'settings.data';
-    const SETTINGS_SAVE = 'settings.save';
-    const SETTINGS_GENERAL_FORM = 'settings.general.form';
-    const SETTINGS_GENERAL_FIELDS = 'settings.general.fields';
+    public const SETTINGS_MOUNT = 'settings.mount';
+    public const SETTINGS_DATA = 'settings.data';
+    public const SETTINGS_SAVE = 'settings.save';
+    public const SETTINGS_GENERAL_FORM = 'settings.general.form';
+    public const SETTINGS_GENERAL_FIELDS = 'settings.general.fields';
 }

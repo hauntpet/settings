@@ -1,6 +1,6 @@
 {
     "name": "haunt/settings",
-    "description": "Sitewide settings for a Haunt application.",
+    "description": "Sitewide settings for an application.",
     "version": "dev-main",
     "authors": [
         {
@@ -10,9 +10,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "haunt/framework": "dev-main",
-        "spatie/laravel-settings": "^3.10",
-        "filament/spatie-laravel-settings-plugin": "^5.10"
+        "haunt/framework": "dev-main"
     },
     "require-dev": {
         "laravel/pint": "^1.0"

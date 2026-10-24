@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdfc595005a7c4cb3187f5dc163a1a05",
+    "content-hash": "f444a1ba824a10e9e8632d5025cd3b5e",
     "packages": [
         {
             "name": "alizharb/laravel-hooks",
@@ -1626,50 +1626,6 @@
             "time": "2026-10-20T18:28:40+00:00"
         },
         {
-            "name": "filament/spatie-laravel-settings-plugin",
-            "version": "v5.10.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filamentphp/spatie-laravel-settings-plugin.git",
-                "reference": "16a4441ba4b4a57fda7ea446ad4bdda6d30b2c60"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/spatie-laravel-settings-plugin/zipball/16a4441ba4b4a57fda7ea446ad4bdda6d30b2c60",
-                "reference": "16a4441ba4b4a57fda7ea446ad4bdda6d30b2c60",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "self.version",
-                "php": "^8.2",
-                "spatie/laravel-settings": "^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Filament\\SpatieLaravelSettingsPluginServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Filament\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament support for `spatie/laravel-settings`.",
-            "homepage": "https://github.com/filamentphp/filament",
-            "support": {
-                "issues": "https://github.com/filamentphp/filament/issues",
-                "source": "https://github.com/filamentphp/filament"
-            },
-            "time": "2026-09-07T18:43:45+00:00"
-        },
-        {
             "name": "filament/support",
             "version": "v5.10.3",
             "source": {
@@ -2373,12 +2329,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hauntpet/framework.git",
-                "reference": "a51691b6011409d8d8e8be5984c21ca538fdbb52"
+                "reference": "26dee4a6fa1c0a33ed4bc85d31892fd2eee3ca83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hauntpet/framework/zipball/a51691b6011409d8d8e8be5984c21ca538fdbb52",
-                "reference": "a51691b6011409d8d8e8be5984c21ca538fdbb52",
+                "url": "https://api.github.com/repos/hauntpet/framework/zipball/26dee4a6fa1c0a33ed4bc85d31892fd2eee3ca83",
+                "reference": "26dee4a6fa1c0a33ed4bc85d31892fd2eee3ca83",
                 "shasum": ""
             },
             "require": {
@@ -2425,7 +2381,7 @@
                 "issues": "https://github.com/hauntpet/framework/issues",
                 "source": "https://github.com/hauntpet/framework/tree/main"
             },
-            "time": "2026-10-21T14:52:04+00:00"
+            "time": "2026-10-23T11:02:50+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
@@ -6155,91 +6111,6 @@
             "time": "2026-09-28T07:16:50+00:00"
         },
         {
-            "name": "spatie/laravel-settings",
-            "version": "3.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-settings.git",
-                "reference": "947bac1613d0f077f31fb4e497c697adff43f915"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-settings/zipball/947bac1613d0f077f31fb4e497c697adff43f915",
-                "reference": "947bac1613d0f077f31fb4e497c697adff43f915",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "illuminate/database": "^12.0|^13.0",
-                "php": "^8.2",
-                "phpdocumentor/type-resolver": "^1.5|^2.0",
-                "spatie/temporary-directory": "^1.3|^2.0"
-            },
-            "require-dev": {
-                "ext-redis": "*",
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^10.0|^11.0",
-                "pestphp/pest": "^3.0|^4.0|^5.0",
-                "pestphp/pest-plugin-laravel": "^3.0|^4.0|^5.0",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^2.0",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "spatie/laravel-data": "^2.0.0|^4.0.0",
-                "spatie/pest-plugin-snapshots": "^2.0",
-                "spatie/phpunit-snapshot-assertions": "^4.2|^5.0",
-                "spatie/ray": "^1.36"
-            },
-            "suggest": {
-                "spatie/data-transfer-object": "Allows for DTO casting to settings. (deprecated)"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\LaravelSettings\\LaravelSettingsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\LaravelSettings\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ruben Van Assche",
-                    "email": "ruben@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Store your application settings",
-            "homepage": "https://github.com/spatie/laravel-settings",
-            "keywords": [
-                "laravel-settings",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-settings/issues",
-                "source": "https://github.com/spatie/laravel-settings/tree/3.10.0"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-10-19T16:12:13+00:00"
-        },
-        {
             "name": "spatie/laravel-sluggable",
             "version": "4.0.4",
             "source": {
@@ -6460,67 +6331,6 @@
                 }
             ],
             "time": "2026-04-27T14:27:52+00:00"
-        },
-        {
-            "name": "spatie/temporary-directory",
-            "version": "2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "32cbb9645b28839cf4f476708e99a2c70e6802c9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/32cbb9645b28839cf4f476708e99a2c70e6802c9",
-                "reference": "32cbb9645b28839cf4f476708e99a2c70e6802c9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\TemporaryDirectory\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Vanderbist",
-                    "email": "alex@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Easily create, use and destroy temporary directories",
-            "homepage": "https://github.com/spatie/temporary-directory",
-            "keywords": [
-                "php",
-                "spatie",
-                "temporary-directory"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/temporary-directory/issues",
-                "source": "https://github.com/spatie/temporary-directory/tree/2.4.0"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-06-22T07:55:44+00:00"
         },
         {
             "name": "symfony/clock",

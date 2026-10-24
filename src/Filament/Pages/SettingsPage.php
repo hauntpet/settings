@@ -3,24 +3,24 @@
 namespace Haunt\Settings\Filament\Pages;
 
 use BackedEnum;
-use Filament\Pages\Page;
-use Illuminate\Support\Str;
 use Filament\Actions\Action;
-use Filament\Schemas\Schema;
-use Haunt\Framework\Facades\Hook;
-use Haunt\Settings\Models\Setting;
-use Filament\Support\Icons\Heroicon;
-use Filament\Schemas\Components\Form;
-use Haunt\Settings\SettingsConstants;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Actions;
-use Illuminate\Validation\ValidationException;
-use Filament\Schemas\Components\EmbeddedSchema;
-use Haunt\Framework\Extend\Filament\ActionHandler;
-use Haunt\Settings\Filament\Clusters\SettingsCluster;
 use Filament\Pages\Concerns\CanUseDatabaseTransactions;
 use Filament\Pages\Concerns\HasUnsavedDataChangesAlert;
+use Filament\Pages\Page;
+use Filament\Schemas\Components\Actions;
+use Filament\Schemas\Components\EmbeddedSchema;
+use Filament\Schemas\Components\Form;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Haunt\Framework\Extend\Filament\ActionHandler;
+use Haunt\Framework\Facades\Hook;
+use Haunt\Settings\Filament\Clusters\SettingsCluster;
+use Haunt\Settings\Models\Setting;
+use Haunt\Settings\SettingsConstants;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class SettingsPage extends Page
 {
@@ -45,14 +45,16 @@ class SettingsPage extends Page
             ->keyBy('key')
             ->transform(fn ($s) => ['value' => $s->value, 'rules' => collect($s->rules)->join(', ')]);
 
-        $data = Hook::applyFilters(SettingsConstants::SETTINGS_DATA, $this->mutateFormDataBeforeFill($settings->toArray()));
+        $data = $this->mutateFormDataBeforeFill($settings->toArray());
 
         $this->form->fill($data);
     }
 
     protected function mutateFormDataBeforeFill(array $data): array
     {
-        return $data;
+        $mutated = Hook::applyFilters(SettingsConstants::SETTINGS_DATA, $data);
+
+        return $mutated;
     }
 
     public function content(Schema $schema): Schema
@@ -94,18 +96,20 @@ class SettingsPage extends Page
                 try {
                     $setting = Setting::where('key', $key)->first();
                     $setting->set($s['value']);
-                } catch(ModelNotFoundException) {
+                } catch (ModelNotFoundException) {
                     ActionHandler::errorNotification("Could not locate the {$key} setting.");
                     $state = false;
-                } catch(ValidationException $e) {
+                } catch (ValidationException $e) {
                     ActionHandler::errorNotification("{$key}: {$e->getMessage()}");
                     $state = false;
                 }
             });
+
             return $state;
         }, 10);
+
         $state = Hook::doAction(SettingsConstants::SETTINGS_SAVE, $this);
-        if($state) {
+        if ($state) {
             ActionHandler::successNotification('Successfully saved changes.');
         }
     }
